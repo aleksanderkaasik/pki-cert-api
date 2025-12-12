@@ -50,4 +50,4 @@ app.post("/sign-ssl", (req, res) => {
     );
 });
 
-app.listen(3000, () => console.log("SSL Signer API running on port 3000"));
+app.listen(process.env.node_port, process.env.node_hostname, () => console.log("SSL Signer API running on port 3000"));
