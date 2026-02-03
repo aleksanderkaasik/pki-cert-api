@@ -43,7 +43,7 @@ app.post("/sign-ssl", (req, res) => {
     execSync(
         `openssl x509 -req -sha256 -days 365 \
          -in reqs/${DomainName}.req \
-         -CA ca/ca.pem -CAkey ca/ca-key.pem \
+         -CA ca/ca.crt -CAkey ca/ca.key\
          -out issued/${DomainName}.pem \
          -CAcreateserial \
          -passin pass:${process.env.CA_root_password} \
